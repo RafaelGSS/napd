@@ -1,0 +1,34 @@
+{
+  "name": "napd",
+  "version": "1.0.0",
+  "description": "Template strucure based on Node Architeture Project Design and helper CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelGSS/napd.git"
+  },
+  "bin": {
+    "napd": "index.js"
+  },
+  "keywords": [
+    "cli",
+    "architeture",
+    "boilerplate",
+    "napd",
+    "nodejs",
+    "api",
+    "boilerplate"
+  ],
+  "author": "RafaelGSS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RafaelGSS/napd/issues"
+  },
+  "homepage": "https://github.com/RafaelGSS/napd#readme",
+  "dependencies": {
+    "caporal": "^1.1.0"
+  }
+}
