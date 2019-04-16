@@ -3,6 +3,7 @@
 const metadata = require('./package.json')
 
 const caporal = require('caporal')
+const InitCommand = require('./commands/initCommand')
 
 caporal.version(metadata.version)
 
@@ -11,9 +12,8 @@ caporal
     .argument('<projectName>', 'Project name')
     .option('--dir <folderPath>', 'Folder to create structure')
     .action((args, option, logger) => {
-        console.log('args', args)
-        console.log('option', option)
-        console.log('logger', logger)
+        const initCommand = new InitCommand();
+        initCommand.execute(args, option)
     })
 
-caporal.parse(process.env)
+caporal.parse(process.argv)
