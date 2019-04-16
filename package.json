@@ -1,6 +1,6 @@
 {
   "name": "napd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template strucure based on Node Architeture Project Design and helper CLI",
   "main": "index.js",
   "scripts": {
