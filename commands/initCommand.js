@@ -1,6 +1,7 @@
 class InitCommand {
     execute(args, opts) {
-        console.log('CHEGASTE AKA')
+        const { projectName } = args
+	const baseFolderPath = process.cwd()
     }
 }
 
