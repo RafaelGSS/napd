@@ -1,38 +1,42 @@
-const { createFolder } = require("./utils/folder")
-const ora = require('ora');
+const { createFolder, copyFiles } = require("./utils/folder")
 const { prompt } = require('enquirer')
+const ora = require('ora');
 
 
 class InitCommand {
-<<<<<<< HEAD
     constructor() {
         this.loader = ora('Initializing...')
+        this.projectPath = ""
+        this.templatePath = "./templates"
     }
     async execute({ projectName }, { dir }) {
-        this.createProjectFolder(projectName, dir)
-
+        this.projectPath = (dir) ? `${dir}/${projectName}` : `./${projectName}`
         const { shouldInstall } = await prompt({
             type: 'confirm',
             name: 'shouldInstall',
-            message: `Do you want me to run the install command? To path: ${folderPath}`
+            message: `Do you want me to run the install command? To path: ${this.projectPath}`
         })
 
+        this.loader.start()
         if (shouldInstall) {
-            createFolder(folderPath)
-                .then(_ => {
-                    this.spinnerInstance.succeed('Finished creation of folder.')
-                })
-                .catch(err => this.spinnerInstance.fail(err.message))
+            await this.createProjectFolder()
+            await this.moveFiles()
+            this.loader.warn("The project has endend, but needs install node_modules from package.json and adjust description!")
         }
+        this.loader.stop()
     }
-    createProjectFolder(projectName, dir) {
-        const folderPath = (dir) ? `${dir}/${projectName}` : `./${projectName}`
-        this.loader.info('Creating project folders')
-=======
-    execute(args, opts) {
-        const { projectName } = args
-	const baseFolderPath = process.cwd()
->>>>>>> 09e756122251d8d6b07943231a44e786c114d75a
+    createProjectFolder() {
+        this.loader.info('Creating project folders...')
+        return createFolder(this.projectPath)
+            .then(_ => this.loader.succeed('Finished creation of folder.'))
+            .catch(err => this.loader.fail(err.message))
+
+    }
+    moveFiles() {
+        this.loader.info('Moving files...')
+        return copyFiles(this.templatePath, this.projectPath)
+            .then(_ => this.loader.succeed('Finished moving files.'))
+            .catch(err => this.loader.fail(err.message))
     }
 }
 
