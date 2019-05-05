@@ -4,6 +4,7 @@ const { prompt } = require('enquirer')
 
 
 class InitCommand {
+<<<<<<< HEAD
     constructor() {
         this.loader = ora('Initializing...')
     }
@@ -27,6 +28,11 @@ class InitCommand {
     createProjectFolder(projectName, dir) {
         const folderPath = (dir) ? `${dir}/${projectName}` : `./${projectName}`
         this.loader.info('Creating project folders')
+=======
+    execute(args, opts) {
+        const { projectName } = args
+	const baseFolderPath = process.cwd()
+>>>>>>> 09e756122251d8d6b07943231a44e786c114d75a
     }
 }
 
