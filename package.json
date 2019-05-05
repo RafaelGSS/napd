@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/RafaelGSS/napd#readme",
   "dependencies": {
-    "caporal": "^1.1.0"
+    "caporal": "^1.1.0",
+    "enquirer": "^2.3.0",
+    "ora": "^3.4.0"
   }
 }
