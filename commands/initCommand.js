@@ -7,7 +7,7 @@ class InitCommand {
     constructor() {
         this.loader = ora('Initializing...')
         this.projectPath = ""
-        this.templatePath = "./templates"
+        this.templatePath = `${__dirname}/../templates`
     }
     async execute({ projectName }, { dir }) {
         this.projectPath = (dir) ? `${dir}/${projectName}` : `./${projectName}`
