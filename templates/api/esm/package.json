@@ -1,0 +1,32 @@
+{
+    "name": "nodejs-api-structure",
+    "version": "0.0.0",
+    "description": "Project structure nodejs",
+    "main": "src/index.js",
+    "module": "src/app.js",
+    "dependencies": {
+        "dotenv": "^7.0.0",
+        "esm": "^3.2.25",
+        "express": "^4.16.4",
+        "express-rescue": "^1.1.5"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.10"
+    },
+    "scripts": {
+        "dev": "nodemon src/index.js",
+        "start": "node src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "postinstall": "node bin/npm-postinstall.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RafaelGSS/napd.git"
+    },
+    "author": "Rafael Gonzaga",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/RafaelGSS/napd/issues"
+    },
+    "homepage": "https://github.com/RafaelGSS/napd#readme"
+}
