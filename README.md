@@ -21,13 +21,20 @@ napd -h
 
 **Initialize an application on current directory**
 ```bash
-napd init PROJECT_NAME
+napd init <PROJECT_NAME> <TEMPLATE_TYPE>
 ```
 
 **Initialize an application on another directory**
 ```bash
-napd init PROJECT_NAME --dir DIRECTORY
+napd init <PROJECT_NAME> <TEMPLATE_TYPE> --dir DIRECTORY
 ```
+
+## Templates done
+
+### API - ESM
+
+API Base with ESM Modules - Check the [docs](templates/api/esm/README.md)
+
 
 ## Dependencies
 
