@@ -2,31 +2,20 @@
   "name": "nodejs-api-structure",
   "version": "1.0.0",
   "description": "Project structure nodejs",
-  "main": "src/app.ts",
+  "main": "src/index.js",
+  "module": "src/app.js",
   "dependencies": {
     "dotenv": "^7.0.0",
+    "esm": "^3.2.25",
     "express": "^4.16.4",
-    "express-rescue": "^1.1.5",
-    "filter-files": "^0.4.0",
-    "is-directory": "^0.3.1",
-    "lodash": "^4.17.11",
-    "mongodb": "^3.2.2"
+    "express-rescue": "^1.1.5"
   },
   "devDependencies": {
-    "@types/dotenv": "^6.1.0",
-    "@types/express": "^4.16.1",
-    "@types/node": "^11.11.3",
-    "chai": "^4.2.0",
-    "mocha": "^6.0.2",
-    "nodemon": "^1.18.10",
-    "tslint": "^5.14.0",
-    "typescript": "^3.3.3333"
+    "nodemon": "^1.18.10"
   },
   "scripts": {
-    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "tsc",
-    "prestart": "npm run build",
-    "start": "node dist/src/app.js",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "node bin/npm-postinstall.js"
   },

@@ -1,4 +1,4 @@
-module.exports = (req, res, next) => {
+export default (req, res, next) => {
     res.setHeader("Content-Type", "application/json");
     res.data = {
         response: {
