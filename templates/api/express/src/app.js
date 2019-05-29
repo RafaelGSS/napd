@@ -3,7 +3,7 @@ config();
 
 import express from "express";
 
-import registerRoutes from "./routes/routes.js.js.js";
+import registerRoutes from "./routes/routes.js";
 
 import builderResponseMiddleware from "./middlewares/global/responseApi";
 // import dependencyInjection from "./middlewares/global/dependencyInjection";

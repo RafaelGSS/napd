@@ -1,0 +1,28 @@
+'use strict'
+
+const { test } = require('tap')
+const Fastify = require('fastify')
+const responseApi = require('../../src/plugins/responseApi')
+
+test('responseApi works standalone', (t) => {
+  t.plan(2)
+  const fastify = Fastify()
+  fastify.register(responseApi)
+
+  fastify.ready((err) => {
+    t.error(err)
+    t.equal(1, 1)
+    // t.equal(fastify.res.success().response.error, false)
+    // t.equal(fastify.res.error().response.error, true)
+  })
+})
+
+// If you prefer async/await, use the following
+//
+// test('support works standalone', async (t) => {
+//   const fastify = Fastify()
+//   fastify.register(Support)
+//
+//   await fastify.ready()
+//   t.equal(fastify.someSupport(), 'hugs')
+// })
