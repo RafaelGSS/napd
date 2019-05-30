@@ -31,10 +31,13 @@ napd init <PROJECT_NAME> <TEMPLATE_TYPE> --dir DIRECTORY
 
 ## Templates done
 
-### API - ESM
+### API - Express ESM
 
-API Base with ESM Modules - Check the [docs](templates/api/esm/README.md)
+API Base with ESM Modules - Check the [docs](templates/api/express/README.md)
 
+### API - Fastify
+
+API Base with Fastify - Check the [docs](templates/api/fastify/README.md)
 
 ## Dependencies
 
