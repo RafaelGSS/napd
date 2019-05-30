@@ -20,7 +20,8 @@
     "fastify": "^2.0.0",
     "fastify-autoload": "^0.6.0",
     "fastify-helmet": "^3.0.0",
-    "fastify-plugin": "^1.5.0"
+    "fastify-plugin": "^1.5.0",
+    "fastify-swagger": "^2.4.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^12.0.0",

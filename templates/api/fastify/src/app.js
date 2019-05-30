@@ -1,8 +1,12 @@
 'use strict'
 
 const path = require('path')
+
 const AutoLoad = require('fastify-autoload')
 const helmet = require('fastify-helmet')
+
+const swagger = require('fastify-swagger')
+const configSwagger = require('./config/swagger')
 
 module.exports = function (fastify, opts, next) {
   // Place here your custom code!
@@ -13,6 +17,12 @@ module.exports = function (fastify, opts, next) {
     helmet,
     {}
   )
+
+  // Register Swagger documentation
+  // Just use { schema } in routes
+  fastify.register(swagger, configSwagger)
+
+
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
