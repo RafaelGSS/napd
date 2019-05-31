@@ -10,7 +10,8 @@
     "test": "tap test/**/*.test.js",
     "start": "node src/server.js",
     "dev": "nodemon ./src/server.js",
-    "lint": "eslint ./ --cache --fix --ignore-pattern .gitignore"
+    "lint": "eslint ./ --cache --ignore-pattern .gitignore",
+    "lint-fix": "eslint ./ --cache --fix --ignore-pattern .gitignore"
   },
   "keywords": [],
   "author": "",
