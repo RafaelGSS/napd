@@ -22,7 +22,6 @@ module.exports = function (fastify, opts, next) {
   // Just use { schema } in routes
   fastify.register(swagger, configSwagger)
 
-
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
