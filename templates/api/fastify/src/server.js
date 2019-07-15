@@ -8,7 +8,9 @@ const Fastify = require('fastify')
 
 // Instantiate Fastify with some config
 const app = Fastify({
-  logger: process.env.NODE_ENV !== 'production',
+  level: {
+    level: process.env.NODE_ENV !== 'production' ? 'info' : 'warn'
+  },
   pluginTimeout: 10000
 })
 
