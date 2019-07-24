@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap test/**/*.test.js",
+    "unit": "tap test/**/*.test.js",
+    "test": "npm run lint && npm run unit",
     "start": "node src/server.js",
     "dev": "nodemon ./src/server.js",
     "lint": "eslint ./ --cache --ignore-pattern .gitignore",
@@ -37,7 +38,6 @@
     "tap": "^12.5.3"
   },
   "pre-commit": [
-    "lint",
     "test"
   ]
 }
