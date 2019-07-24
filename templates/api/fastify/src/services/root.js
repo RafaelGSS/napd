@@ -8,7 +8,7 @@ module.exports = function (fastify, opts, next) {
       summary: 'Example of sumary'
     }
   }, function (request, reply) {
-    reply.success({ data: { ok: true } })
+    reply.success({ ok: true })
   })
 
   next()

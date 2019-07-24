@@ -5,15 +5,23 @@ const generateResponse = require('../utils/generatorResponse')
 
 // the use of fastify-plugin is required to be able
 // to export the decorators to the outer scope
-
 module.exports = fp(function (fastify, opts, next) {
-  fastify.decorateReply('success', function ({ message = 'Success', data = [], code = 200 }) {
+  fastify.decorateReply('success', function (data = [], response = {}) {
+    // Setting defaults
+    response.error = response.error || false
+    response.message = response.message || 'Success'
+
     this.type('application/json')
-    this.send(generateResponse(data, message, code, false))
+    this.send(generateResponse(data, response))
   })
-  fastify.decorateReply('error', function ({ message = 'Error', data = [], code = 400 }) {
+  fastify.decorateReply('error', function (response = {}) {
+    // Setting defaults
+    response.code = response.code || 400
+    response.error = response.error || true
+    response.message = response.message || 'Error'
+
     this.type('application/json')
-    this.send(generateResponse(data, message, code, true))
+    this.send(generateResponse([], response))
   })
   next()
 })
