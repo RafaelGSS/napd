@@ -15,6 +15,31 @@ npm install
 ```sh
 npm run test
 ```
+## Docker
+
+### Dev
+
+Build
+```sh
+docker build -t napd-fastify .
+```
+
+Running
+```sh
+docker run -p 3000:3000 -e DEV=1 -v $(pwd):/app -t napd-fastify
+```
+
+### Prod
+
+Build
+```sh
+docker build -t napd-fastify .
+```
+
+Running
+```sh
+docker run -p 3000:3000 -t napd-fastify
+```
 
 ## Concept of Structure
 
