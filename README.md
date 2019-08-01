@@ -1,4 +1,6 @@
 # NAPD
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+
 Node API Project Design - Cli for generate structure base of api.
 
 ## Installing globally
