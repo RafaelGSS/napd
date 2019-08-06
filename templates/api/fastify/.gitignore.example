@@ -64,3 +64,5 @@ package-lock.json
 # generated code
 examples/typescript-server.js
 test/types/index.js
+
+.env
