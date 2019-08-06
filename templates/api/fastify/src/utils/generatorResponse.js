@@ -11,12 +11,11 @@ const base = {
 /**
  * Build response base by plugin
  */
-module.exports = (data, message, code, error) => {
+module.exports = (data, response) => {
   const baseT = { ...base }
+
+  baseT.response = { ...base.response, ...response }
   baseT.data = data
-  baseT.response.message = message
-  baseT.response.statusCode = code
-  baseT.response.error = error
 
   return baseT
 }
