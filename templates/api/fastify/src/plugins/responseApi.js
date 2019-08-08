@@ -16,10 +16,11 @@ module.exports = fp(function (fastify, opts, next) {
   })
   fastify.decorateReply('error', function (response = {}) {
     // Setting defaults
-    response.code = response.code || 400
+    response.statusCode = response.statusCode || 400
     response.error = response.error || true
     response.message = response.message || 'Error'
 
+    this.code(response.statusCode)
     this.type('application/json')
     this.send(generateResponse([], response))
   })
