@@ -9,21 +9,6 @@ const swagger = require('fastify-swagger')
 const configSwagger = require('./config/swagger')
 
 module.exports = function (fastify, opts, next) {
-  // Place here your custom code!
-  fastify.addSchema({
-    $id: 'pagination',
-    type: 'object',
-    properties: {
-      page: {
-        type: 'integer',
-        default: 1
-      },
-      perPage: {
-        type: 'integer',
-        default: 1000
-      }
-    }
-  })
   // This loads a set of 12 middlewares for security
   // See more in https://github.com/fastify/fastify-helmet
   fastify.register(
