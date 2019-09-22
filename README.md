@@ -31,7 +31,7 @@ napd init <PROJECT_NAME> <TEMPLATE_TYPE>
 napd init <PROJECT_NAME> <TEMPLATE_TYPE> --dir DIRECTORY
 ```
 
-## Templates done
+## Templates
 
 ### API - Express ESM
 
