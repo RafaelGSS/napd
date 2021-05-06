@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "pretty": true,
+    "noEmitOnError": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "newLine": "lf",
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "lib": [
+      "esnext"
+    ],
+    "experimentalDecorators": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "strictPropertyInitialization": false
+  },
+  "include": [
+    "src/**/*",
+    "**/*spec.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "./dist"
+  ]
+}

@@ -10,7 +10,7 @@ caporal.version(metadata.version)
 caporal
   .command('init', 'Start a fresh new instalation of project')
   .argument('<projectName>', 'Project name')
-  .argument('<templateType>', 'Template type - values [ api/express, api/fastify ]', caporal.STRING, 'api/express')
+  .argument('<templateType>', 'Template type - values [ api/express, api/fastify, api/fastify-typescript ]', caporal.STRING, 'api/express')
   .complete(() => Promise.resolve(['api/express', 'api/fastify']))
   .option('--dir <folderPath>', 'Folder to create structure')
   .action(({ projectName, templateType }, option, logger) => {
