@@ -41,6 +41,10 @@ API Base with ESM Modules - Check the [docs](templates/api/express/README.md)
 
 API Base with Fastify - Check the [docs](templates/api/fastify/README.md)
 
+### API - Fastify Typescript
+
+API Base with Fastify and Typescript - Check the [docs](templates/api/fastify-typescript/README.md)
+
 ## Dependencies
 
 - [caporal](https://ghub.io/caporal): A full-featured framework for building command line applications (cli) with node.js
