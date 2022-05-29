@@ -1,13 +1,11 @@
-'use strict'
-
-module.exports = function (fastify, opts, next) {
+export default function (fastify, opts, next) {
   fastify.get('/', {
     schema: {
       description: 'Get example data',
       tags: ['Example Tag'],
       summary: 'Example of sumary'
     }
-  }, function (request, reply) {
+  }, function (_request, reply) {
     reply.success({ ok: true })
   })
 

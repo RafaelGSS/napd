@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   routePrefix: '/docs',
   exposeRoute: true,
   swagger: {

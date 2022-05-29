@@ -11,7 +11,7 @@ const base = {
 /**
  * Build response base by plugin
  */
-module.exports = (data, response) => {
+export default (data, response) => {
   const baseT = { ...base }
 
   baseT.response = { ...base.response, ...response }

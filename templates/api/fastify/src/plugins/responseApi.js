@@ -1,11 +1,9 @@
-'use strict'
-
-const fp = require('fastify-plugin')
-const generateResponse = require('../utils/generatorResponse')
+import fp from 'fastify-plugin'
+import generateResponse from '../utils/generatorResponse'
 
 // the use of fastify-plugin is required to be able
 // to export the decorators to the outer scope
-module.exports = fp(function (fastify, opts, next) {
+export default fp(function (fastify, _opts, next) {
   fastify.decorateReply('success', function (data = [], response = {}) {
     // Setting defaults
     response.error = response.error || false

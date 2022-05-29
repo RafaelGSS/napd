@@ -1,14 +1,12 @@
-'use strict'
+import { join } from 'path'
 
-const path = require('path')
+import AutoLoad from '@fastify/autoload'
+import helmet from '@fastify/helmet'
 
-const AutoLoad = require('fastify-autoload')
-const helmet = require('fastify-helmet')
+import swagger from '@fastify/swagger'
+import configSwagger from './config/swagger'
 
-const swagger = require('fastify-swagger')
-const configSwagger = require('./config/swagger')
-
-module.exports = function (fastify, opts, next) {
+export default function (fastify, opts, next) {
   // This loads a set of 12 middlewares for security
   // See more in https://github.com/fastify/fastify-helmet
   fastify.register(
@@ -26,14 +24,14 @@ module.exports = function (fastify, opts, next) {
   // those should be support plugins that are reused
   // through your application
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'plugins'),
+    dir: join(__dirname, 'plugins'),
     options: Object.assign({}, opts)
   })
 
   // This loads all plugins defined in services
   // define your routes in one of these
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'services'),
+    dir: join(__dirname, 'services'),
     options: Object.assign({}, opts)
   })
 

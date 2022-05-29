@@ -1,10 +1,9 @@
-'use strict'
-
 // Read the .env file.
-require('dotenv').config()
+import { config } from 'dotenv'
+config()
 
 // Require the framework
-const Fastify = require('fastify')
+import Fastify from 'fastify'
 
 // Instantiate Fastify with some config
 const app = Fastify({
@@ -15,7 +14,7 @@ const app = Fastify({
 })
 
 // Register your application as a normal plugin.
-app.register(require('./app.js'))
+app.register(import('./app.js'))
 
 // Start listening.
 app.listen(process.env.PORT || 3000, '0.0.0.0', (err) => {
